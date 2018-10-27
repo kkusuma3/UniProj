@@ -3,6 +3,14 @@ import './header.css';
 import {Nav, NavItem, NavDropdown, MenuItem, Navbar, FormGroup, FormControl, Button} from 'react-bootstrap';
 
 class Header extends Component {
+  constructor() {
+    super();
+  }
+
+  searchSubmit = () => {
+
+  }
+
   render() {
     return (
       <Navbar>
@@ -27,7 +35,7 @@ class Header extends Component {
             <FormGroup>
               <FormControl type="text" placeholder="Search" />
             </FormGroup>{' '}
-            <Button type="submit" onClick="searchSubmit()">Submit</Button>
+            <Button type="submit" onClick={this.searchSubmit()}>Submit</Button>
           </Navbar.Form>
           <Nav pullRight>
             <NavDropdown eventKey={3} title="My profile" id="basic-nav-dropdown" className="header-tabs">
