@@ -1,0 +1,26 @@
+.home-title-section{
+	background: inherit;
+	margin: 3em;
+}
+
+.browse-projects-section{
+	margin-left: 2.5em;
+}
+
+.title-text{
+	font-size: 3.5em;
+}
+
+.title-secondary{
+	font-size: 1.5em;
+}
+
+.pager{
+	height: 1.2em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.browse-button{
+
+}
