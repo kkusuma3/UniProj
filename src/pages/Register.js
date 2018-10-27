@@ -21,11 +21,10 @@ class Register extends Component {
   }
 
   componentWillMount() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        window.location = '/';
-      }
-    })
+    const user = firebase.auth().currentUser;
+    if (user) {
+      window.location('/');
+    }
   }
 
   onInputChange = (e) => {
@@ -36,28 +35,33 @@ class Register extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
     ).then(user => {
       if (user) {
-        user.updateProfile({
-         firstName: this.state.firstName,
-         lastName: this.state.lastName,
-         email: this.state.email,
-         classStanding: this.state.classStanding,
-         phoneNumber: this.state.phoneNumber,
-         schoolName: this.state.schoolName,
-        })
-          .then(() => {
-            window.location = '/';
-          });
+        const currentUser = firebase.auth().currentUser;
+        this.writeUserData(currentUser.uid);
       }
+
     }).catch(error => {
-      alert('Failed when creating account. Please try again later.');
       console.log(error.message);
+      alert('Failed when creating account. Please try again later.');
     })
+
+  }
+
+  writeUserData = (userId) => {
+    firebase.database().ref('users/' + userId).set({
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      classStanding: this.state.classStanding,
+      phoneNumber: this.state.phoneNumber,
+      schoolName: this.state.schoolName,
+    }).then(() => {
+      window.location = '/';
+    });
   }
 
   passwordValidation = () => {
@@ -172,6 +176,7 @@ class Register extends Component {
                     <option value="colSophomore">College Sophomore</option>
                     <option value="colJunior">College Junior</option>
                     <option value="colSenior">College Senior</option>
+                    <option value="colGrad">College Graduate Student</option>
                   </FormControl>
                   <FormControl.Feedback />
                 </FormGroup>
