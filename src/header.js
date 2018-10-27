@@ -63,7 +63,7 @@ class Header extends Component {
             </Navbar.Form>
             <Nav pullRight>
               <NavDropdown eventKey={3} title="My profile" id="basic-nav-dropdown" className="header-tabs">
-                <MenuItem eventKey={3.1} className="dropdown-tabs">Edit Profile</MenuItem>
+                <MenuItem eventKey={3.1} className="dropdown-tabs" href="/profile">View Profile</MenuItem>
                 <MenuItem eventKey={3.2} className="dropdown-tabs">My Postings</MenuItem>
                 <MenuItem divider />
                 <MenuItem eventKey={3.3} className="dropdown-signout" onClick={this.handleSignOut}>Sign Out</MenuItem>
