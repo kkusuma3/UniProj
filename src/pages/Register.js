@@ -23,7 +23,7 @@ class Register extends Component {
   componentWillMount() {
     const user = firebase.auth().currentUser;
     if (user) {
-      window.location('/');
+      window.location = '/';
     }
   }
 

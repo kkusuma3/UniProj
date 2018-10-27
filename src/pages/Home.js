@@ -1,38 +1,49 @@
 import React, { Component } from 'react';
 import Header from './../header';
 import firebase from './../firebase';
+import {Jumbotron} from 'react-bootstrap';
 import HomeCSS from './Home.css';
-import {Jumbotron, Grid, Row, Col, Clearfix, Panel, PanelGroup, Accordion, ListGroup, ListGroupItem, Pager} from 'react-bootstrap';
+import {Grid, Row, Col, Clearfix, Panel, PanelGroup, Accordion, ListGroup, ListGroupItem, Pager} from 'react-bootstrap';
 
 class Home extends Component {
   constructor() {
     super();
 
     this.state = {
-      user: '',
+      user: {
+        firstName: '',
+        lastName: '',
+      },
       isLogin: false,
     }
   }
 
   componentWillMount() {
-    firebase.auth().onAuthStateChanged(user => {
+    let userProfile = {};
+    let that = this;
+    firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        this.setState({
-          user,
-          isLogin: false,
-        })
+        let userId = firebase.auth().currentUser.uid;
+        firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+          userProfile = snapshot.val();
+          that.setState({
+            user: userProfile,
+            isLogin: true,
+          })
+        });
       } else {
-        // window.location = 'loginPage';
+        window.location = '/login';
       }
     })
   }
 
   render() {
+    const name = `${this.state.user.firstName} ${this.state.user.lastName}`;
     return (
       <div>
         <Header />
         <div className = "home-title-section">
-          <h1 className = "title-text">Welcome, {this.state.user.name}!</h1>
+          <h1 className = "title-text">Welcome, {name}!</h1>
           <h2 className = "title-secondary">
             A project/opportunity for you is a few clicks away!
           </h2>
@@ -61,10 +72,10 @@ class Home extends Component {
                   </Pager.Item>
                 </Pager>
               </ListGroup>
-              
+
             </Panel>
             <Row className = "browse-location-list">
-              
+
             </Row>
           </Col>
           <Col xsOffset={1} xs={10} md={5}>
