@@ -47,12 +47,12 @@ class Header extends Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="#" className="header-tabs">
-                <i class="material-icons">add</i>&nbsp;Add Projects
+                <i className="material-icons">add</i>&nbsp;Add Projects
               </NavItem>
             </Nav>
             <Nav>
               <NavItem eventKey={2} href="#" className="header-tabs">
-                <i class="material-icons">group_work</i>&nbsp;Matches
+                <i className="material-icons">group_work</i>&nbsp;Matches
               </NavItem>
             </Nav>
             <Navbar.Form pullLeft>
