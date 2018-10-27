@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './../header';
 import firebase from './../firebase';
-import HomeCSS from './Home.css';
+import PostingDetailsCSS from './PostingDetails.css';
 import {Jumbotron, Grid, Row, Col, Clearfix, Panel, PanelGroup, Accordion, ListGroup, ListGroupItem, Pager} from 'react-bootstrap';
 
 class Home extends Component {
@@ -31,12 +31,12 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <div className = "home-title-section">
+        <Grid className = "posting-title-section">
           <h1 className = "title-text">Welcome, {this.state.user.name}!</h1>
           <h2 className = "title-secondary">
             A project/opportunity for you is a few clicks away!
           </h2>
-        </div>
+        </Grid>
         <div className = "browse-projects-section">
           <Col xs={10} md={5}>
             <Panel className = "browse-location-title">
