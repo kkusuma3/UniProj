@@ -13,3 +13,7 @@
 .dropdown-menu>li.dropdown-signout>a{
     color: #c62828;
 }
+
+.material-icons{
+    font-size: inherit;
+}
