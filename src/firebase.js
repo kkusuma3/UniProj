@@ -1,12 +1,15 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+require('dotenv').config();
 
 const config = {
-  apiKey: "AIzaSyCgZ6lDLqE6xdrMmy8nDB4GVJNPeUuBpaM",
-  authDomain: "volunteer-a8b1f.firebaseapp.com",
-  databaseURL: "https://volunteer-a8b1f.firebaseio.com",
-  projectId: "volunteer-a8b1f",
-  storageBucket: "volunteer-a8b1f.appspot.com",
-  messagingSenderId: "413876170213"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID
 }
 
 firebase.initializeApp(config);
