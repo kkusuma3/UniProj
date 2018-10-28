@@ -1,55 +1,64 @@
-.home-title-section{
-	background: inherit;
-	margin: 4em;
+.home-title-section {
+  background: inherit;
+  margin: 4em;
 }
 
-.browse-projects-section{
-	margin-left: 2.5em;
+.browse-projects-section {
+  margin-left: 2.5em;
 }
 
-.title-text{
-	font-size: 3.5em;
+.title-text {
+  font-size: 3.5em;
 }
 
-.title-secondary{
-	font-size: 1.5em;
+.title-secondary {
+  font-size: 1.5em;
 }
 
-.pager{
-	height: 1.2em;
-	margin-left: 1em;
-	margin-right: 1em;
+.pager {
+  height: 1.2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
-.browse-button{
+.browse-button {}
 
+.project-header {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-.project-header{
-	font-weight: bold;
-	font-size: 1.2em;
+.project-secondary {
+  margin-left: 7.5em;
 }
 
-.project-secondary{
-	margin-left: 7.5em;
+.list-project {
+  padding: 1em 0px;
 }
 
-.list-project{
-	padding: 1em 0px;
+.image-float {
+  width: 100%;
+  border: none !important;
+  max-height: 100%;
 }
 
-.image-float{
-	max-height: 2rem;
-	float: left;
-	margin: 0px 0.5em;
-	border: solid;
-	border-color: black;
+.previous {
+  color: blue;
 }
 
-.previous{
-	color: blue;
+.next {
+  color: blue;
 }
 
-.next{
-	color: blue;
+i.material-icons.locate-me {
+  float: right;
+  font-size: 24px;
+}
+
+i.material-icons.locate-me:hover {
+  cursor: pointer;
+}
+
+.top-skill {
+  margin-left: 10px;
 }

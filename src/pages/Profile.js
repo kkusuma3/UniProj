@@ -94,7 +94,7 @@ class Profile extends Component {
                 <hr />
               </div>
               <textarea
-                value={this.state.user.bio}
+                value={this.state.user.biography}
                 placeholder="Short bio"
                 readOnly
               />

@@ -46,3 +46,7 @@
 .label {
   margin-right: 10px;
 }
+
+div.profile-bio>div:first-child {
+  margin-top: 50px;
+}
