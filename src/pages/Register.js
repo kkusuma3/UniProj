@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Form, FormGroup, FormControl, Button, HelpBlock } from 'react-bootstrap';
 import Header from './../header';
 import firebase from './../firebase';
+import CreatableInputOnly from './../CreatableSelect';
 import './Register.css';
 
 class Register extends Component {
@@ -17,6 +18,9 @@ class Register extends Component {
       schoolName: '',
       password: '',
       confirmPassword: '',
+      interests: [],
+      skills: [],
+      biography: '',
     }
   }
 
@@ -35,23 +39,27 @@ class Register extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(
-      this.state.email,
-      this.state.password
-    ).then(user => {
-      if (user) {
-        const currentUser = firebase.auth().currentUser;
-        this.writeUserData(currentUser.uid);
-      }
+    const status = [this.passwordValidation(), this.confirmPasswordValidation(), this.biographyValidation()];
+    if (!status.includes('error')) {
+      firebase.auth().createUserWithEmailAndPassword(
+        this.state.email,
+        this.state.password
+      ).then(user => {
+        if (user) {
+          const currentUser = firebase.auth().currentUser;
+          this.writeUserData(currentUser.uid);
+        }
 
-    }).catch(error => {
-      console.log(error.message);
-      alert('Failed when creating account. Please try again later.');
-    })
-
+      }).catch(error => {
+        console.log(error.message);
+        alert('Failed when creating account. Please try again later.');
+      })
+    }
   }
 
   writeUserData = (userId) => {
+    const skills = this.state.skills.map(d => d.label);
+    const interests = this.state.interests.map(d => d.label);
     firebase.database().ref('users/' + userId).set({
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -59,6 +67,9 @@ class Register extends Component {
       classStanding: this.state.classStanding,
       phoneNumber: this.state.phoneNumber,
       schoolName: this.state.schoolName,
+      skills: skills,
+      interests: interests,
+      biography: this.state.biography,
     }).then(() => {
       window.location = '/';
     });
@@ -82,6 +93,22 @@ class Register extends Component {
     } else {
       return 'error';
     }
+  }
+
+  biographyValidation = () => {
+    if (this.state.biography.split(' ').length < 100) {
+      return null;
+    } else {
+      return 'error';
+    }
+  }
+
+  updateSkills = (skills) => {
+    this.setState({ skills });
+  }
+
+  updateInterests = (interests) => {
+    this.setState({ interests });
   }
 
   render() {
@@ -158,7 +185,6 @@ class Register extends Component {
                     type="text"
                     placeholder="School name"
                     onChange={event => this.onInputChange(event)}
-                    required
                   />
                   <FormControl.Feedback />
                 </FormGroup>
@@ -178,6 +204,30 @@ class Register extends Component {
                     <option value="colSenior">College Senior</option>
                     <option value="colGrad">College Graduate Student</option>
                   </FormControl>
+                  <FormControl.Feedback />
+                </FormGroup>
+                <FormGroup controlId="skills">
+                  <CreatableInputOnly
+                    placeholder="Enter your skills and press enter..."
+                    handleChange={this.updateSkills}
+                  />
+                  <FormControl.Feedback />
+                </FormGroup>
+                <FormGroup controlId="interests">
+                  <CreatableInputOnly
+                    placeholder="Enter your interests and press enter..."
+                    handleChange={this.updateInterests}
+                  />
+                  <FormControl.Feedback />
+                </FormGroup>
+                <FormGroup controlId="biography" validationState={this.biographyValidation()}>
+                  <FormControl
+                    componentClass="textarea"
+                    placeholder="Short biography (max 100 words)"
+                    onChange={event => this.onInputChange(event)}
+                    rows={3}
+                    required
+                  />
                   <FormControl.Feedback />
                 </FormGroup>
                 <FormGroup>
