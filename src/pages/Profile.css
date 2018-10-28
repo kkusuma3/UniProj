@@ -1,0 +1,48 @@
+.profile-picture {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.pp-edit {
+  color: blue;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pp-edit:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile-bio>textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px 20px;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-bio>textarea:focus {
+  outline: none;
+}
+
+.profile-bio>.contact-info {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.profile-bio>.contact-info>i.material-icons {
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.contact-info>p {
+  display: inline;
+}
+
+.label {
+  margin-right: 10px;
+}
