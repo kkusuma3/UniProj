@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import PostingDetails from './pages/PostingDetails';
+import Profile from './pages/Profile';
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/postingDetails" component={PostingDetails} />
+          <Route path="/profile" component={Profile} />
         </div>
       </Router>
     );

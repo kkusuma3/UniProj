@@ -47,12 +47,12 @@ class Header extends Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="#" className="header-tabs">
-                <i class="material-icons">add</i>&nbsp;Add Projects
+                <i className="material-icons">add</i>&nbsp;Add Projects
               </NavItem>
             </Nav>
             <Nav>
               <NavItem eventKey={2} href="#" className="header-tabs">
-                <i class="material-icons">group_work</i>&nbsp;Matches
+                <i className="material-icons">group_work</i>&nbsp;Matches
               </NavItem>
             </Nav>
             <Navbar.Form pullLeft>
@@ -63,7 +63,7 @@ class Header extends Component {
             </Navbar.Form>
             <Nav pullRight>
               <NavDropdown eventKey={3} title="My profile" id="basic-nav-dropdown" className="header-tabs">
-                <MenuItem eventKey={3.1} className="dropdown-tabs">Edit Profile</MenuItem>
+                <MenuItem eventKey={3.1} className="dropdown-tabs" href="/profile">View Profile</MenuItem>
                 <MenuItem eventKey={3.2} className="dropdown-tabs">My Postings</MenuItem>
                 <MenuItem divider />
                 <MenuItem eventKey={3.3} className="dropdown-signout" onClick={this.handleSignOut}>Sign Out</MenuItem>
