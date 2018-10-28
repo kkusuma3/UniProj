@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './../header';
 import firebase from './../firebase';
-import HomeCSS from './Home.css';
+import consumerMatch from './consumer-matching.css';
 import {Jumbotron, Grid, Row, Col, Clearfix, Panel, PanelGroup, Accordion, ListGroup, ListGroupItem, Pager} from 'react-bootstrap';
 
 class Home extends Component {
@@ -32,13 +32,10 @@ class Home extends Component {
       <div>
         <Header />
         <div className = "home-title-section">
-          <h1 className = "title-text">Welcome, {this.state.user.name}!</h1>
-          <h2 className = "title-secondary">
-            A project/opportunity for you is a few clicks away!
-          </h2>
+          <h1 className = "title-text">My Applications</h1>
         </div>
         <div className = "browse-projects-section">
-          <Col xs={10} md={5}>
+          <Col xs={12}>
             <Panel className = "browse-location-title">
               <Panel.Heading className = "project-title">Projects in {this.state.user.location} </Panel.Heading>
               <ListGroup>
@@ -73,57 +70,6 @@ class Home extends Component {
                   </Row>
                   <Row>
                     <p className = "project-secondary">Food Bank Atlanta - Doraville, GA</p>
-                  </Row>
-                </ListGroupItem>
-                <Pager className="pager">
-                  <Pager.Item previous href="#">
-                    &larr; Previous Page
-                  </Pager.Item>
-                  <Pager.Item href="#" className="browse-button">
-                    Browse more opportunities ...
-                  </Pager.Item>
-                  <Pager.Item next href="#">
-                    Next Page &rarr;
-                  </Pager.Item>
-                </Pager>
-              </ListGroup>
-            </Panel>
-          </Col>
-          <Col xsOffset={1} xs={10} md={5}>
-            <Panel className = "browse-location-interests">
-              <Panel.Heading className = "project-title">Projects using {this.state.user.topSkill} </Panel.Heading>
-              <ListGroup>
-                <ListGroupItem className="list-project">
-                  <Col xs={4} md={3} lg={2}>
-                    <img src={`${process.env.PUBLIC_URL}/SGA.png`} className="image-float"/> 
-                  </Col>
-                  <Row>
-                    <p className = "project-header">Back-End Developer Opportunity</p>
-                  </Row>
-                  <Row>
-                    <p className = "project-secondary">Engineering Without Borders - Athens, GA</p>
-                  </Row>
-                </ListGroupItem>
-                <ListGroupItem className="list-project">
-                  <Col xs={4} md={3} lg={2}>
-                    <img src={`${process.env.PUBLIC_URL}/SGA.png`} className="image-float"/> 
-                  </Col>
-                  <Row>
-                    <p className = "project-header">Back-End Remote work needed!</p>
-                  </Row>
-                  <Row>
-                    <p className = "project-secondary">Abedi Aba - Remote</p>
-                  </Row>
-                </ListGroupItem>
-                <ListGroupItem className="list-project" bsStyle="danger">
-                  <Col xs={4} md={3} lg={2}>
-                    <img src={`${process.env.PUBLIC_URL}/SGA.png`} className="image-float"/> 
-                  </Col>
-                  <Row>
-                    <p className = "project-header">Need database design help!</p>
-                  </Row>
-                  <Row>
-                    <p className = "project-secondary">Link - Remote</p>
                   </Row>
                 </ListGroupItem>
                 <Pager className="pager">

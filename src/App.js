@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import PostingDetails from './pages/PostingDetails';
 import Profile from './pages/Profile';
+import consumerMatching from './pages/consumer-matching';
 
 class App extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
           <Route path="/register" component={Register} />
           <Route path="/postingDetails" component={PostingDetails} />
           <Route path="/profile" component={Profile} />
+          <Route path="/consumerMatching" component={consumerMatching} />
         </div>
       </Router>
     );

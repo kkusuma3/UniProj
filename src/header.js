@@ -39,7 +39,7 @@ class Header extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a className="home-icon" href="#home">Brand</a>
+            <a className="home-icon" href="#home">UniProj</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
