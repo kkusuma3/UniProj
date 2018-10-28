@@ -1,0 +1,39 @@
+.posting-title{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.posting-poster{
+	padding-top: 0;
+	font-size: 1.5em;
+
+}
+
+.posting-dueDate{
+
+}
+
+.posting-image{
+	margin-top: 2em;
+	max-height: 15em;
+	max-width: 10em;
+	border: solid;
+	border-color: black;
+}
+
+.posting-text{
+	font-weight: bold;
+	margin: 1em 0px;
+	font-size: 1.5em;
+}
+
+.posting-skills{
+	font-size: 1em;
+	margin: 0px 0.5em;
+}
+
+.button-apply{
+	padding: 1.5em 0px;
+	margin: auto;
+	text-align: center;
+}

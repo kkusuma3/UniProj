@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import Header from './../header';
 import firebase from './../firebase';
 import PostingDetailsCSS from './PostingDetails.css';
-import {Jumbotron, Grid, Row, Col, Clearfix, Panel, PanelGroup, Accordion, ListGroup, ListGroupItem, Pager} from 'react-bootstrap';
+import {Label, Jumbotron, Grid, Row, Col, Clearfix, Panel, PanelGroup, Accordion, ListGroup, ListGroupItem, Pager, Button} from 'react-bootstrap';
+
+const postingTitle = 'Front-End Developer Opportunity available!';
+const postingPoster = 'Student Government Association';
+const postingLocation = 'Athens, GA';
+const postingDueDate = 'Dec 28, 2018';
+
 
 class Home extends Component {
   constructor() {
@@ -32,67 +38,47 @@ class Home extends Component {
       <div>
         <Header />
         <Grid className = "posting-title-section">
-          <h1 className = "title-text">Welcome, {this.state.user.name}!</h1>
-          <h2 className = "title-secondary">
-            A project/opportunity for you is a few clicks away!
-          </h2>
-        </Grid>
-        <div className = "browse-projects-section">
-          <Col xs={10} md={5}>
-            <Panel className = "browse-location-title">
-              <Panel.Heading className = "project-title">Projects in {this.state.user.location} </Panel.Heading>
-              <ListGroup>
-                <ListGroupItem header="Front-End Developer Opportunity">Student Government Association - Atlanta, GA</ListGroupItem>
-                <ListGroupItem header="Open Hand Volunteer Opportunity" href="#">
-                  OpenHand Atlanta - Sandy Springs, GA
-                </ListGroupItem>
-                <ListGroupItem header="Food Bank needs your help!" bsStyle="danger">
-                  Food Bank Atlanta - Doraville, GA
-                </ListGroupItem>
-                <Pager className="pager">
-                  <Pager.Item previous href="#">
-                    &larr; Previous Page
-                  </Pager.Item>
-                  <Pager.Item href="#" className="browse-button">
-                    Browse more opportunities ...
-                  </Pager.Item>
-                  <Pager.Item next href="#">
-                    Next Page &rarr;
-                  </Pager.Item>
-                </Pager>
-              </ListGroup>
-              
-            </Panel>
-            <Row className = "browse-location-list">
-              
+          <Col xs={12} md={4} lg ={2}>
+            <img src={`${process.env.PUBLIC_URL}/SGA.png`} className="posting-image"></img>
+          </Col>
+          <Col xs={12} md={8} lg={10}>
+            <Row>
+              <h1 className = "posting-title">{postingTitle}</h1>
+            </Row>
+            <Row>
+              <p className = "posting-poster">{postingPoster} - {postingLocation}</p>
+            </Row>
+            <Row>
+              <p className = "posting-dueDate">Due on {postingDueDate}</p>
             </Row>
           </Col>
-          <Col xsOffset={1} xs={10} md={5}>
-            <Panel className="browse-location-interests">
-              <Panel.Heading className="project-title">Projects using {this.state.user.topSkill} </Panel.Heading>
-              <ListGroup>
-                <ListGroupItem header="Back-End Developer Opportunity">Engineering Without Borders - Athens, GA</ListGroupItem>
-                <ListGroupItem header="Back-End Remote work needed!" href="#">
-                  Abedi Aba - Remote
-                </ListGroupItem>
-                <ListGroupItem header="Need database design help!" bsStyle="danger">
-                  Link - Remote
-                </ListGroupItem>
-                <Pager className="pager">
-                  <Pager.Item previous href="#">
-                    &larr; Previous Page
-                  </Pager.Item>
-                  <Pager.Item href="#" className="browse-button">
-                    Browse more opportunities ...
-                  </Pager.Item>
-                  <Pager.Item next href="#">
-                    Next Page &rarr;
-                  </Pager.Item>
-                </Pager>
-              </ListGroup>
-            </Panel>
-          </Col>
-        </div>
+        </Grid>
+        <Grid className = "posting-body-section">
+          <Row>
+            <p className = "posting-text">Desired Skills:</p>
+          </Row>
+          <Row>
+            <Label bsStyle="default posting-skills">HTML</Label>{' '}
+            <Label bsStyle="primary posting-skills">CSS</Label>{' '}
+            <Label bsStyle="warning posting-skills">Front-End</Label>{' '}
+            <Label bsStyle="danger posting-skills">XML</Label>
+          </Row>
+          <Row>
+            <p className = "posting-text">Project Length:</p>
+          </Row>
+          <Row>
+            <p className = "posting-subtext"> 3 Months </p>
+          </Row>
+          <Row>
+            <p className = "posting-text">Project Description:</p>
+          </Row>
+          <Row>
+            <p className = "posting-subtext">Looking for high school student to fulfill over front-end development role starting {postingDueDate} </p>
+          </Row>
+          <Row className="button-apply">
+            <Button bsStyle="success" bsSize="large"> <i class="material-icons">add</i>&nbsp; Apply</Button>
+          </Row>
+        </Grid>
       </div>
     );
   }
