@@ -62,6 +62,10 @@ class Home extends Component {
             <Label bsStyle="primary posting-skills">CSS</Label>{' '}
             <Label bsStyle="warning posting-skills">Front-End</Label>{' '}
             <Label bsStyle="danger posting-skills">XML</Label>
+            <Label bsStyle="default posting-skills">Android</Label>{' '}
+            <Label bsStyle="primary posting-skills">UI Design</Label>{' '}
+            <Label bsStyle="warning posting-skills">User Experience</Label>{' '}
+            <Label bsStyle="danger posting-skills">Web 2.0</Label>
           </Row>
           <Row>
             <p className = "posting-text">Project Length:</p>

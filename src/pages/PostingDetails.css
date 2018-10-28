@@ -32,6 +32,10 @@
 	margin: 0px 0.5em;
 }
 
+.posting-subtext{
+	font-size: 1.2em;
+}
+
 .button-apply{
 	padding: 1.5em 0px;
 	margin: auto;
