@@ -63,7 +63,9 @@ class Home extends Component {
                     <Image src={`${process.env.PUBLIC_URL}/SGA.png`} className="image-float"/>
                   </Col>
                   <Row>
-                    <p className = "project-header">Front-End Developer Opportunity</p>
+                    <a href="/postingDetails" className = "project-header">
+                      Front-End Developer Opportunity
+                    </a>
                   </Row>
                   <Row>
                     <p className = "project-secondary">Student Government Association - Atlanta, GA</p>
