@@ -73,16 +73,16 @@ class Home extends Component {
                 </ListGroupItem>
                 <ListGroupItem className="list-project">
                   <Col xs={4} md={3} lg={2}>
-                    <Image src={`${process.env.PUBLIC_URL}/open_hand.jpg`} className="image-float"/>
+                    <Image src={`${process.env.PUBLIC_URL}/stephen.jpg`} className="image-float"/>
                   </Col>
                   <Row>
-                    <p className = "project-header">Open-Hand volunteer opportunity needed!</p>
+                    <p className = "project-header">Need BME Students for my project</p>
                   </Row>
                   <Row>
-                    <p className = "project-secondary">Open Hand Atlanta - Midtown Atlanta, GA</p>
+                    <p className = "project-secondary">Stephen Arjanto - Midtown Atlanta, GA</p>
                   </Row>
                 </ListGroupItem>
-                <ListGroupItem className="list-project" bsStyle="danger">
+                <ListGroupItem className="list-project">
                   <Col xs={4} md={3} lg={2}>
                     <Image src={`${process.env.PUBLIC_URL}/food_bank.png`} className="image-float"/>
                   </Col>
@@ -118,27 +118,27 @@ class Home extends Component {
               <ListGroup>
                 <ListGroupItem className="list-project">
                   <Col xs={4} md={3} lg={2}>
-                    <Image src={`${process.env.PUBLIC_URL}/ewb.jpg`} className="image-float"/>
+                    <Image src={`${process.env.PUBLIC_URL}/melvin.JPG`} className="image-float"/>
                   </Col>
                   <Row>
                     <p className = "project-header">Back-End Developer Opportunity</p>
                   </Row>
                   <Row>
-                    <p className = "project-secondary">Engineering Without Borders - Athens, GA</p>
+                    <p className = "project-secondary">Melvin Juwono - Athens, GA</p>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem className="list-project">
                   <Col xs={4} md={3} lg={2}>
-                    <Image src={`${process.env.PUBLIC_URL}/swe.png`} className="image-float"/>
+                    <Image src={`${process.env.PUBLIC_URL}/kevin.jpg`} className="image-float"/>
                   </Col>
                   <Row>
                     <p className = "project-header">Back-End Remote work needed!</p>
                   </Row>
                   <Row>
-                    <p className = "project-secondary">Society of Women Engineers</p>
+                    <p className = "project-secondary">Kevin Kusuma - Remote</p>
                   </Row>
                 </ListGroupItem>
-                <ListGroupItem className="list-project" bsStyle="danger">
+                <ListGroupItem className="list-project">
                   <Col xs={4} md={3} lg={2}>
                     <Image src={`${process.env.PUBLIC_URL}/eevm.png`} className="image-float"/>
                   </Col>

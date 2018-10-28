@@ -51,7 +51,7 @@ class Header extends Component {
               </NavItem>
             </Nav>
             <Nav>
-              <NavItem eventKey={2} href="#" className="header-tabs">
+              <NavItem eventKey={2} href="/consumerMatching" className="header-tabs">
                 <i className="material-icons">group_work</i>&nbsp;Matches
               </NavItem>
             </Nav>

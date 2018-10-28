@@ -1,6 +1,6 @@
 .home-title-section {
   background: inherit;
-  margin: 4em;
+  margin: 2em 4em;
 }
 
 .browse-projects-section {
@@ -29,7 +29,12 @@
 }
 
 .project-secondary {
-  margin-left: 7.5em;
+  margin-left:8.2em;
+  font-size: 1.4rem;
+}
+
+.project-title{
+  font-weight: bold;
 }
 
 .list-project {
@@ -39,7 +44,7 @@
 .image-float {
   width: 100%;
   border: none !important;
-  max-height: 100%;
+  max-height: 5rem;
 }
 
 .previous {
