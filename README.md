@@ -1,3 +1,10 @@
+## UniProj
+React Web App as a platform for students to exchange ideas and projects for incoming freshmen and transfer students to work on for a better university application. Refer to UniProj.pdf for full problem statement, demo and financial analysis of the product.
+
+To start: 'npm start'
+
+## React Docs
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
