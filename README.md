@@ -1,5 +1,5 @@
 ## UniProj
-React Web App as a platform for students to exchange ideas and projects for incoming freshmen and transfer students to work on for a better university application. Refer to UniProj.pdf for full problem statement, demo and financial analysis of the product.
+React Web App as a platform for students to exchange ideas and projects for incoming freshmen and transfer students to work on for a better university application. Refer to **UniProj.pdf** and  **Welcome to UniProj.mp4** for full problem statement, demo and financial analysis of the product.
 
 To start: 'npm start'
 
